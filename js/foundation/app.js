@@ -127,10 +127,10 @@
 
 
 
-    jQuery(document).on( "load", function() {
+    jQuery(document).ready( function() {
         
         //fire up foundation
-        jQuery(document).foundation();       
+        jQuery('html').foundation();       
         
     });
 

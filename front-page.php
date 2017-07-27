@@ -60,9 +60,56 @@ get_header(); ?>
 			</div>
 		</section>
 		<section class="section videos" id="section2">
-			
-			Use this: 
-			https://revolution.themepunch.com/jquery-vimeo-gallery/
+		    
+			<div class="row">
+				<div class="column">
+					<div class="video-gallery">
+
+						<?php center_header_FFN( 'Our videos' )?>
+			                                       
+			            <?php
+						// check if the repeater field has rows of data
+						if( have_rows('video_slides') ):
+
+							echo '<ul id="image-gallery" class="gallery list-unstyled cS-hidden">';
+							$ct = 1;
+						 	// loop through the rows of data
+						    while ( have_rows('video_slides') ) : the_row();
+
+						        // display a sub field value
+						        $thumbnail = get_sub_field('thumbnail');
+						        $url = get_sub_field('video_url');
+						        $embed_code = '';
+
+						        if ( !empty( $url ) ) $embed_code = wp_oembed_get( $url, array('width'=> 800) );
+
+
+
+						        if ( !empty( $thumbnail ) ) {
+						        	echo '<li data-thumb="'.$thumbnail['sizes']['medium'].'" id="ct-'.$ct.'">'; 
+		                        		
+		                        		if ( $embed_code != false ) {
+		                        				
+		                        				echo '<div class="responsive-embed widescreen">'.$embed_code. '<div>';
+
+		                        		} else {
+		                        			echo '<img src="'.$thumbnail['url'].'" alt="'.$thumbnail['alt'].'"/>';
+		                        		}
+
+		                    	 	echo '</li>';
+						        }						       
+
+						    $ct++;
+						    endwhile;
+							
+							echo '</ul>';							
+
+						endif;
+
+						?>
+			        </div>
+		        </div>
+		    </div>
 
 		</section>
 		<section class="section reviews" id="section3"><div class="quote"> </div>

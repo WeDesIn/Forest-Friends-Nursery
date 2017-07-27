@@ -32,17 +32,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</div>
 	<div id="header-content">
-		<div class="row">
-			<div class="large-3 columns">	
-				<figure class="header-logo">
-					<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forest-friends-nursery-logo-cut.jpg" 
-						alt="Forest Friends Nursery logo"></a>
-				</figure>
-			</div>
-      		<div class="large-9 columns">	
-				<?php 
-				wp_nav_menu ( array( 'theme_location' => 'primary', 'items_wrap'=> '<ul class="forest-menu">%3$s</ul>')); 
-				?>
+		<div class="grid-container grid-x">
+			<div class="row">
+				<div class="large-3 columns">	
+					<figure class="header-logo">
+						<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/forest-friends-nursery-logo-cut.jpg" 
+							alt="Forest Friends Nursery logo"></a>
+					</figure>
+				</div>
+	      		<div class="large-9 columns">	
+					<?php 
+					wp_nav_menu ( array( 'theme_location' => 'primary', 'items_wrap'=> '<ul class="forest-menu">%3$s</ul>')); 
+					?>
+				</div>
 			</div>
 		</div>
 	</div>

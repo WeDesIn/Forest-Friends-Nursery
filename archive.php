@@ -39,7 +39,7 @@ else {$paged = 1; }
 			</div>
 			<div class="column text-center section" id="button-wrap">
 				<a href="#" class="button arrow-down" id="load-more" data-page="<?php echo $paged; ?>" 
-					data-max="<?php echo $wp_query->max_num_pages; ?>">Load more</a>
+					data-max="<?php echo $wp_query->max_num_pages; ?>">More posts</a>
 			</div>
 			<?php } ?>
 

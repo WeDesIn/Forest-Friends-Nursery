@@ -35,7 +35,7 @@ get_header(); ?>
 <?php get_footer(); ?>
 <script>
       /* <![CDATA[ */
-       function initialize() {
+      function initialize() {
         var map_canvas = document.getElementById('map_canvas');
         var map_options = {
           center: new google.maps.LatLng(51.7928915, -2.61810928),
@@ -54,5 +54,6 @@ get_header(); ?>
         });
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+
       /*]]>*/
 </script>
